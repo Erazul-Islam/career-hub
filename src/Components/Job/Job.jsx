@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { MdLocationOn } from "react-icons/md";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
 
-    const { logo,job_title,company_name,remote_or_onsite,location,job_type,salary,job_description } = job
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job
 
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
@@ -26,7 +27,9 @@ const Job = ({ job }) => {
                     </h2>
                 </div>
                 <div className="card-actions">
-                    <button className="btn btn-primary">View Details</button>
+                    <Link to={`/job/${id}`}>
+                        <button className="btn btn-primary">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>
